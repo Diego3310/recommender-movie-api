@@ -1,0 +1,9 @@
+flask_env
+__pycache__
+static/data/movies.csv
+static/data/ratings.csv
+static/model/knn_model.pickle
+.vscode
+env
+.env
+environment
