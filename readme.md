@@ -24,7 +24,7 @@
     - Recursos : 
         - POST http://localhost:9090/api/v1/movies/recommeder  | 
           - Schema : 
-                - {movieId:integer:required}  = Id de la película
-                - {ntop:integer:optional}     = Cantidad de películas a recomendar (Default 5)
+            - {movieId:integer:required}  = Id de la película
+            - {ntop:integer:optional}     = Cantidad de películas a recomendar (Default 5)
 
 
