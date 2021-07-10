@@ -72,7 +72,9 @@ class Recommerder:
                 })
         return response
     
-
+    def list_movies_all(self):
+        movies = self.df_movies;
+        return movies.to_json(orient="records")
 
 
     

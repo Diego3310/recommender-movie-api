@@ -1,11 +1,13 @@
 from flask import Flask,jsonify, make_response, request
 from flask_json_schema import JsonSchema, JsonValidationError
 from ml_movie import Recommerder
+from flask_cors import CORS
 from schema import MOVIE_REQUEST_SCHEMA
 recommender = Recommerder()
 
 app = Flask('recommender-movie-upc')
 schema = JsonSchema(app)
+cors = CORS(app)
 
 
 
@@ -17,6 +19,10 @@ def validation_error(e):
 def ping():
         return "Ping Recommeder Movie App .."
 
+
+@app.route('/api/v1/movies',methods=['GET'])
+def list_movies_all():
+    return recommender.list_movies_all()
 
 @app.route('/api/v1/movies/recommeder',methods=['POST'])
 @schema.validate(MOVIE_REQUEST_SCHEMA)
